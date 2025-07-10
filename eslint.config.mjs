@@ -104,7 +104,7 @@ const customRulesConfig = {
     ],
 
     // Prettier
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+    'prettier/prettier': 'error',
   },
 };
 
