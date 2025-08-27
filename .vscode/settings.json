@@ -5,24 +5,9 @@
     "source.fixAll.eslint": "explicit"
   },
 
-  // ESLint configuration
-  "eslint.format.enable": true,
-  "eslint.useFlatConfig": true,
-
-  // Prettier configuration
-  "prettier.configPath": "./prettier.config.mjs",
-
-  // Default formatters for specific file types
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "editor.defaultFormatter": "biomejs.biome"
 }
