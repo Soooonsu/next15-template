@@ -1,0 +1,83 @@
+{
+  // Biome JSON Schema - 자동 완성 및 유효성 검사 지원
+  "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
+
+  // VCS (Version Control System) 설정
+  "vcs": {
+    "enabled": false, // VCS 통합 기능 비활성화
+    "clientKind": "git", // VCS 클라이언트 종류
+    "useIgnoreFile": true // .gitignore 파일 사용 여부
+  },
+
+  // 파일 처리 관련 설정
+  "files": {
+    "ignoreUnknown": false // 알 수 없는 파일 확장자 무시 여부
+  },
+
+  // 코드 포맷터 설정
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "useEditorconfig": true
+  },
+
+  // 린터 설정
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true, // 권장 규칙 세트 사용
+      "suspicious": {
+        "noExplicitAny": "error", // TypeScript any 타입 사용 금지
+        "noConsole": {
+          "level": "warn",
+          "options": {
+            "allow": ["warn", "error"] // warn, error만 허용
+          }
+        }
+      },
+      "style": {
+        "noEnum": "error", // TypeScript enum 사용 금지
+        "noNamespace": "error", // TypeScript namespace 사용 금지
+        "useImportType": "error", // 타입만 import할 때는 type import 사용
+        "useAsConstAssertion": "error" // const assertion 사용 권장
+      },
+
+      "correctness": {
+        "useExhaustiveDependencies": "warn" // useEffect 의존성 배열 완성도 검사
+      },
+
+      // 접근성(a11y) 관련 규칙
+      "a11y": {
+        "useAltText": "warn",
+        "useValidAriaProps": "warn",
+        "useValidAriaValues": "warn",
+        "noAriaUnsupportedElements": "warn",
+        "useAriaPropsForRole": "warn",
+        "useAriaPropsSupportedByRole": "warn"
+      }
+    }
+  },
+
+  // JavaScript 포맷팅 설정
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "double",
+      "quoteStyle": "single",
+      "trailingCommas": "all",
+      "semicolons": "always",
+      "arrowParentheses": "always"
+    }
+  },
+
+  // 코드 어시스트 기능 설정
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on" // import 구문 자동 정렬
+      }
+    }
+  }
+}
